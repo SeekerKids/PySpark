@@ -18,7 +18,8 @@ sudo nano spark-env.sh
   export SPARK_MASTER_HOST=master
   export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
-sudo nano slave
+cp workers.template workers
+sudo nano workers
 budak1
 budak2
 
