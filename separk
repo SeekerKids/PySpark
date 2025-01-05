@@ -1,0 +1,39 @@
+//lakukan ke master dan budak//
+wget https://dlcdn.apache.org/spark/spark-3.5.4/spark-3.5.4-bin-hadoop3.tgz
+tar -xvf spark-3.5.4-bin-hadoop3.tgz
+mv spark-3.5.4-bin-hadoop3 Spark
+sudo mv Spark /usr/share
+sudo apt-get install scala
+sudo nano .bashrc
+  export SPARK_HOME=/usr/share/Spark
+  export PATH=$PATH:/usr/share/Spark/bin
+source .bashrc
+cd /usr/share/Spark/conf
+cp Spark-env.sh.template spark-env.sh
+
+java -version
+ls -l /usr/lib/jvm
+
+sudo nano spark-env.sh
+  export SPARK_MASTER_HOST=master
+  export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+sudo nano slave
+budak1
+budak2
+
+//sampai sini//
+
+cd /usr/share/Spark/sbin
+
+./start-all.sh
+jps (http://master:8080)
+
+/etc/hosts
+
+
+# Import PySpark
+from pyspark.sql import SparkSession
+
+# Create a Spark session
+spark = SparkSession.builder.master("local[*]").getOrCreate()
