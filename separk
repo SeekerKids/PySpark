@@ -9,7 +9,7 @@ sudo nano .bashrc
   export PATH=$PATH:/usr/share/Spark/bin
 source .bashrc
 cd /usr/share/Spark/conf
-cp Spark-env.sh.template spark-env.sh
+cp spark-env.sh.template spark-env.sh
 
 java -version
 ls -l /usr/lib/jvm
