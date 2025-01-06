@@ -33,6 +33,23 @@ jps (http://master:8080)
 /etc/hosts
 
 
+
+https://www.tutorialspoint.com/apache_spark/apache_spark_core_programming.htm
+scala> 
+val inputfile = sc.textFile("input.txt")
+val counts = inputfile.flatMap(line => line.split(" ")).map(word => (word, 1)).reduceByKey(_+_);
+counts.toDebugString
+counts.cache()
+counts.saveAsTextFile("output")
+  buka cmd baru
+cd output/
+ls -1 
+cat part-00000
+cat part-00001 
+http://localhost:4040
+counts.unpersist()
+
+
 # Import PySpark
 from pyspark.sql import SparkSession
 
